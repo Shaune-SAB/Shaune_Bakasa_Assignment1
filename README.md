@@ -2,7 +2,26 @@
 
 This is my profile and mini-portfolio website built for the Web Technologies module (CIS2103) at Africa University.
 
-The goal was to practice semantic HTML5 and make a simple page that introduces me and shows one of my course projects.
+The project demonstrates semantic HTML5 markup, modern CSS3 styling, CSS Grid and Flexbox layouts, mobile-first responsive media queries, and utility-first styling with Tailwind CSS.
+
+---
+
+## Responsive Notes (Assignment 2 Updates)
+
+### 1. Tested Breakpoints
+The page was tested using Chrome DevTools across the three core standard widths to ensure zero horizontal scrolling, overlapping elements, or broken components:
+- **Mobile (~375px):** iPhone SE / iPhone 12 Pro (Mobile-first default base layout)
+- **Tablet (~768px):** iPad Mini / Portrait Tablet (`min-width: 768px`)
+- **Desktop (~1280px):** Standard Laptop / Desktop Monitor (`min-width: 1024px`)
+
+### 2. Flexbox vs. CSS Grid Usage
+- **Flexbox (`display: flex`):** Used in the header social links (`.social-links`), navigation drawer/links (`.menu-links`), and experience/project item headers (`.item-header`). Flexbox was selected for these components because they require one-dimensional alignment, dynamic gap management, and horizontal/vertical centering across screen sizes.
+- **CSS Grid (`display: grid`):** Used in the **Skills Section** (`.skills-grid`) using `grid-template-columns: repeat(auto-fit, minmax(130px, 1fr))` with `gap: 12px`. CSS Grid was chosen because it creates an automatic multi-column layout that reflows gracefully on small screens without hardcoded breakpoint hacks.
+
+### 3. Tailwind Utility-First Integration
+- **Converted Sections:** The **Header Section** and **Contact Form Section** were refactored using Tailwind CSS utility classes.
+- **Responsive Variants:** Used responsive variants including `md:p-8`, `md:text-2xl`, `grid-cols-1 md:grid-cols-2`, and `md:w-auto` to scale typography, convert single-column form field rows into multi-column inputs on tablet/desktop, and control button sizing.
+- **CSS/Tailwind Architecture Split:** Tailwind CSS is loaded via CDN for rapid form and utility styling, while `style.css` handles core design variables, CSS Grid layouts, custom component transitions, and base mobile-first rules.
 
 ---
 
@@ -46,112 +65,6 @@ In Thursday’s practical, my classmate told me my profile image alt text was to
 That doesn’t tell someone using a screen reader who the photo is of.
 
 **What I did:**  
-I changed it to: 
+I changed it to:
 ```html
-<img src="profile.jpg" alt="Profile photograph of Shaune Anotidaishe Bakasa">
-
-
-
-# PROMPT_LOG.md
-
-This file tracks how I used AI while building my portfolio site for CIS2103.
-
----
-
-### Prompt 1: About Me Bio
-**Date:** 09 Sept 2026
-
-**Context:** Year 2 CIS student at Africa University. Building portfolio site. Need an "About Me" section.
-
-**Goal:** Write 2 short paragraphs for the about section.
-
-**Constraints:** Sound professional but friendly. Mention web development and problem solving. Avoid big jargon.
-
-**AI Output:**
-"I am a driven Computer Information Systems student with a deep passion for software development and web technologies..."
-
-**What I Changed:**
-It sounded too formal and generic. I shortened it to 2 sentences and removed words like "seamless user experience".  
-Final version: "I am a dedicated Computer Information Systems student passionate about building efficient, responsive, and user-friendly web applications..."
-
-**What I Learned:**  
-AI is good for a first draft, but I need to edit it so it sounds like me.
-
----
-
-### Prompt 2: Accessibility Fix
-**Date:** 09 Sept 2026
-
-**Question to AI:**  
-"My peer said my image alt text 'Profile photograph' is too vague. How can I make it better for screen readers?"
-
-**AI Suggestion:**  
-"Add who is in the photo and what they are doing. e.g. alt='Profile photograph of Shaune Anotidaishe Bakasa smiling'"
-
-**What I Changed:**  
-Updated the `<img>` tag in index.html with the new alt text.
-
-**What I Learned:**  
-Alt text should describe the image, not just say "image".
-
----
-
-### Prompt 3: Debugging CSS
-**Date:** 10 Sept 2026
-
-**Question to AI:**  
-"I used `<br>` tags to add space between sections. Is there a better way to do this with CSS?"
-
-**AI Suggestion:**  
-"Use margin on sections instead. e.g. `section { margin-bottom: 40px; }`"
-
-**What I Changed:**  
-Removed `<br><br>` and added margin in styles.css.
-
-**What I Learned:**  
-Structure should be HTML, styling should be CSS. Don’t mix them.
-
-
-# Portfolio Development - Prompt Log
-
-**Developer:** Shaune Anotidaishe Bakasa  
-**Project:** Personal Portfolio Website  
-**Stack:** HTML5, CSS3, JavaScript  
-
----
-
-## Log Entries
-
-### [2026-09-11] - Form Refresh Bug & Setup
-* **Goal:** Fix page refresh behavior when clicking the "Send" button on the contact form.
-* **Prompt:** *"Why is it when I fill in the details of my form it just refreshes?"*
-* **Root Cause:** Default form submit behavior reloads the page when the submit button is clicked without `e.preventDefault()`.
-* **Resolution:** 
-  * Attached event listener to `submit` event on `<form>` instead of `click` on `<button>`.
-  * Added `event.preventDefault()` to handle submission via JavaScript cleanly.
-
----
-
-### [2026-09-11] - Bio & Header Copy Generation
-* **Goal:** Craft professional, approachable portfolio copy tailored for recruiters and clients in Zimbabwe/South Africa.
-* **Prompt:** Requested 2 bio versions and 3 tagline options following length and keyword constraints.
-* **Outcome Selected:**
-  * **Tagline:** *"Building fast, responsive websites that grow your business."*
-  * **Bio:** Used 3-sentence version highlighting Computer Information Systems background at Africa University, web dev skills, and IT support focus.
-
----
-
-### [2026-09-11] - Web Development Fundamentals Clarification
-* **Goal:** Understand core frontend concepts (`<meta viewport>`, CSS structure, and Semantic HTML).
-* **Prompt:** *"Explain to me like I’m new: what does meta viewport actually do... difference between <style> vs external CSS... why use semantic tags over div?"*
-* **Key Takeaways:**
-  * `<meta viewport>` prevents mobile browsers from rendering desktop-scaled pages.
-  * External CSS (`styles.css`) is best practice for clean separation of concerns and caching.
-  * Semantic HTML (`<header>`, `<main>`, `<nav>`) improves accessibility (screen readers) and SEO.
-
----
-
-## Next Action Items
-- [ ] Create `styles.css` using CSS Flexbox for modern, responsive layout.
-- [ ] Connect contact form to an email handling service (e.g., Formspree/Web3Forms).
-- [ ] Add 2 additional student/client project cards in `<main>`.
+<img src="profile.jpg" alt="Shaune Anotidaishe Bakasa profile photo">
