@@ -1,0 +1,194 @@
+
+   /* 1. ROOT VARIABLES & GLOBAL BASE */
+   
+:root {
+  --primary: #7a0019;
+  --primary-dark: #5c0013;
+  --accent: #d4af37;
+  --accent-hover: #b8941f;
+  --background: #f8f5f2;
+  --card: #ffffff;
+  --text: #333333;
+  --border: #e5d9cf;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: var(--background);
+  color: var(--text);
+}
+
+
+   /* 2. MOBILE-FIRST BASE STYLES (~375px) */
+  
+
+/* Social Links Flexbox Layout (Part B Requirement) */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.social-links a {
+  text-decoration: none;
+  padding: 0.4rem 0.9rem;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background-color: var(--accent);
+  color: #222;
+}
+
+/* Navigation Layout */
+.nav-container {
+  background-color: var(--primary-dark);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.menu-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 0.8rem 1rem;
+}
+
+.menu-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  width: 100%;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.menu-links a:hover {
+  background-color: var(--accent);
+  color: #222;
+}
+
+/* Main Content Area */
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 1rem;
+}
+
+section {
+  background-color: var(--card);
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+section h2 {
+  margin-top: 0;
+  color: var(--primary);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.5rem;
+}
+
+/* Skills Grid Layout (Part C Requirement) */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 12px;
+  margin-top: 1rem;
+}
+
+.skill-tag {
+  background-color: #fff3cc;
+  color: var(--primary);
+  padding: 0.8rem;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid #e6cb71;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* Experience / Project Item Headers */
+.item {
+  margin-bottom: 1.5rem;
+}
+
+.item-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.item-title {
+  font-weight: bold;
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+.item-date {
+  color: #666;
+  font-size: 0.85rem;
+}
+
+.item-sub {
+  color: var(--accent-hover);
+  font-weight: bold;
+  margin: 0.25rem 0 0.5rem 0;
+}
+
+footer {
+  text-align: center;
+  padding: 1.25rem;
+  background-color: var(--primary-dark);
+  color: white;
+  font-size: 0.9rem;
+}
+
+   /* 3. TABLET MEDIA QUERY (min-width: 768px) */
+  
+@media (min-width: 768px) {
+  .menu-links {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .menu-links a {
+    width: auto;
+  }
+
+  section {
+    padding: 2rem;
+  }
+
+  .item-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+}
+
+
+   /* 4. DESKTOP MEDIA QUERY (min-width: 1024px) */
+   
+@media (min-width: 1024px) {
+  main {
+    margin: 2rem auto;
+  }
+}

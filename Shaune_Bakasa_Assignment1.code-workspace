@@ -1,0 +1,31 @@
+{
+	"folders": [
+		{
+			"name": "Shaune_Bakasa_Assignment1",
+			"path": "."
+		},
+		{
+			"name": "Myprojectt1",
+			"path": "../Myprojectt1"
+		},
+		{
+			"name": "MyPortfolio",
+			"path": "../MyPortfolio"
+		},
+		{
+			"name": "Shaune_Assignmen",
+			"path": "../Shaune_Assignmen"
+		},
+		{
+			"name": "Shaune_WEB_Assignment",
+			"path": "../Shaune_WEB_Assignment"
+		},
+		{
+			"name": "Web_Tech",
+			"path": "../Web_Tech"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Shaune_Assignmen"
+	}
+}
